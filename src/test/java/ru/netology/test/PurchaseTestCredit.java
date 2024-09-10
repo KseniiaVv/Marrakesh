@@ -38,7 +38,7 @@ public class PurchaseTestCredit {
     void shouldCreditPaymentApproved() {
         var cardinfo = new DataHelper.CardInfo(getApprovedCardNumber(), getValidMonth(), getValidYear(), getValidHolder(), getValidCVCCVV());
         var purchasepage = new PurchasePage();
-        var form = purchasepage.buyByCreditCard();doc
+        var form = purchasepage.buyByCreditCard();
         form.completedForm(cardinfo);
         form.paymentApproved();
         assertEquals("APPROVED", SQLHelper.getCreditRequestStatus());
