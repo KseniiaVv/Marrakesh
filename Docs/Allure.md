@@ -1,0 +1,1 @@
+![Без имени8.png](..%2F..%2F..%2FPictures%2F%C1%E5%E7%20%E8%EC%E5%ED%E88.png)
