@@ -86,7 +86,7 @@ public class PurchaseTestCredit {
         form.incorrectCardNumberVisible();
     }
 
-    // Заполнение поля «Номер карты» номером, состоящим из 15 цифр:
+    // Заполнение поля «Номер карты» номером , состоящим из 15 цифр:
     @Test
     public void shouldCardNumberOfFifteenDigitsByCredit() {
         var purchasepage = new PurchasePage();
