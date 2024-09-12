@@ -1,6 +1,7 @@
 package ru.netology.data;
 
 import lombok.SneakyThrows;
+import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
@@ -15,7 +16,9 @@ public class SQLHelper {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+
+        return DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.username"), System.getProperty("db.password"));
+
     }
 
     @SneakyThrows
@@ -28,15 +31,15 @@ public class SQLHelper {
 
     @SneakyThrows
     public static void clearCreditTable() {
-        var deleteCreditEntity = "DELETE FROM credit_request_entity";
-        try (var conn = getConn()) {
+        val deleteCreditEntity = "DELETE FROM credit_request_entity";
+        try (val conn = getConn()) {
             runner.update(conn, deleteCreditEntity);
         }
     }
 
     @SneakyThrows
     public static String getPaymentStatus() {
-        var statusSQL = "SELECT status FROM payment_entity LIMIT 1";
+        val statusSQL = "SELECT status FROM payment_entity LIMIT 1";
         return getStatus(statusSQL);
     }
 
@@ -48,8 +51,8 @@ public class SQLHelper {
 
     @SneakyThrows
     private static String getStatus(String query) {
-        var runner = new QueryRunner();
-        try (var conn = getConn()) {
+        val runner = new QueryRunner();
+        try (val conn = getConn()) {
             String status = runner.query(conn, query, new ScalarHandler<String>());
             return status;
         }
