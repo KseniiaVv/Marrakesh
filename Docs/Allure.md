@@ -1,1 +1,0 @@
-![allure.jpg](..%2F..%2F..%2FPictures%2Fallure.jpg)
