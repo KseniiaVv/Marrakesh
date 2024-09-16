@@ -59,6 +59,7 @@ public class PurchaseTestPayment {
 
     //  Поле «Номер карты» не заполнено:
     @Test
+    @DisplayName (" Should display an error if card empty")
     public void shouldCardIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -68,6 +69,7 @@ public class PurchaseTestPayment {
 
     // Поле «Номер карты» заполнено нулями:
     @Test
+    @DisplayName ("Should display an error if card number of Zeros")
     public void shouldCardNumberOfZeros() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -77,6 +79,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Номер карты» номером, состоящим из 1 цифры:
     @Test
+    @DisplayName ("Should display an error if card number of one digit")
     public void shouldCardNumberOfOneDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -86,6 +89,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Номер карты» номером, состоящим из 15 цифр:
     @Test
+    @DisplayName ("Should display an error if card number of fifteen digit")
     public void shouldCardNumberOfFifteenDigits() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -95,6 +99,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Номер карты» номером, состоящим из 17 цифр:
     @Test
+    @DisplayName ("Should display an error if card number of seventeen digit")
     public void shouldCardNumberOfSeventeenDigits() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -104,6 +109,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Номер карты»  номером карты, не зарегистрированным  в базе данных:
     @Test
+    @DisplayName ("Should display an error if card number not registered")
     public void shouldCardNumberNotRegistered() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -113,6 +119,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Номер карты» нечисловым значением:
     @Test
+    @DisplayName ("Should display an error if card non numeric value")
     public void shouldCardNonNumericValue() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -122,6 +129,7 @@ public class PurchaseTestPayment {
 
     // Поле «Месяц» не заполнено:
     @Test
+    @DisplayName ("Should display an error if month is empty")
     public void shouldMonthIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -131,6 +139,7 @@ public class PurchaseTestPayment {
 
     // аполнение поля «Месяц»  нулями:
     @Test
+    @DisplayName ("Should display an error if month  with zeros")
     public void shouldMonthWithZeros() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -140,6 +149,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Месяц» несуществующим месяцем, граничные значения
     @Test
+    @DisplayName ("Should display an error if month not exist boundary")
     public void shouldMonthIfNotExistBoundary() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -149,6 +159,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Месяц» несуществующим месяцем:
     @Test
+    @DisplayName ("Should display an error if month not exist")
     public void shouldMonthIfNotExist() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -158,6 +169,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Месяц» значением из 1 цифры:
     @Test
+    @DisplayName ("Should display an error if month of one digit")
     public void shouldMonthOfOneDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -167,6 +179,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Месяц» значением из 3 цифр:
     @Test
+    @DisplayName ("Should display an error if month of three digit")
     public void shouldMonthOfThreeDigits() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -176,6 +189,7 @@ public class PurchaseTestPayment {
 
     //Заполнение поля «Месяц» нечисловым значением:
     @Test
+    @DisplayName ("Should display an error if month non numeric value")
     public void shouldMonthNonNumericValue() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -185,6 +199,7 @@ public class PurchaseTestPayment {
 
     //  Поле  «Год» не заполнено:
     @Test
+    @DisplayName ("Should display an error if year is empty")
     public void shouldYearIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -194,6 +209,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» нулями:
     @Test
+    @DisplayName ("Should display an error if year with zeros")
     public void shouldYearIfZeros() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -203,6 +219,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» значением из 1 цифры:
     @Test
+    @DisplayName ("Should display an error if year is one digit")
     public void shouldYearOfOneDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -212,6 +229,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» значением из 3 цифр:
     @Test
+    @DisplayName ("Should display an error if year is three digit")
     public void shouldYearOfThreeDigits() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -221,6 +239,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» значением прошедшего года:
     @Test
+    @DisplayName ("Should display an error if last year")
     public void shouldLastYear() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -230,6 +249,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» значением, на 10 лет превышающего текущий год:
     @Test
+    @DisplayName ("Should display an error if  year 10years more")
     public void shouldYear10YearsMore() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -239,6 +259,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Год» нечисловым  значением:
     @Test
+    @DisplayName ("Should display an error if  year is non numeric value")
     public void shouldYearNonNumericValue() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -248,6 +269,7 @@ public class PurchaseTestPayment {
 
     // Поле «Владелец» не заполнено:
     @Test
+    @DisplayName ("Should display an error if  holder empty")
     public void shouldHolderIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -257,6 +279,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» значением из 1 буквы:
     @Test
+    @DisplayName ("Should display an error if  holder one letter")
     public void shouldHolderOfOneLetter() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -266,6 +289,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» значением из 50 букв:
     @Test
+    @DisplayName ("Should display an error if  holder fifty letter")
     public void shouldHolderOfFiftyLetters() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -275,6 +299,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» значением на кириллице:
     @Test
+    @DisplayName ("Should display an error if  holder with cyrillic")
     public void shouldHolderWithCyrillic() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -284,6 +309,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» цифрами:
     @Test
+    @DisplayName ("Should display an error if  holder with digits")
     public void shouldHolderWithDigits() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -293,6 +319,7 @@ public class PurchaseTestPayment {
 
     //  Заполнение поля «Владелец» специальными символами:
     @Test
+    @DisplayName ("Should display an error if  holder with special symbols")
     public void shouldHolderSpecialSymbols() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -302,6 +329,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» арабской вязью:
     @Test
+    @DisplayName ("Should display an error if  holder with arabic ligature")
     public void shouldHolderArabicLigature() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -311,6 +339,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «Владелец» иероглифами:
     @Test
+    @DisplayName ("Should display an error if  holder with hieroglyphs")
     public void shouldHolderHieroglyphs() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -320,6 +349,7 @@ public class PurchaseTestPayment {
 
     // Не заполнение поля «CVC/CVV»:
     @Test
+    @DisplayName ("Should display an error if CVC/CVV empty")
     public void shouldCVCCVVIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -329,6 +359,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «CVC/CVV» значением из 1 цифры:
     @Test
+    @DisplayName ("Should display an error if CVC/CVV is one digit")
     public void shouldCVCCVVOnOneDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -338,6 +369,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «CVC/CVV» значением из 2 цифр:
     @Test
+    @DisplayName ("Should display an error if CVC/CVV is two digit")
     public void shouldCVCCVVOnTwoDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -347,6 +379,7 @@ public class PurchaseTestPayment {
 
     //  Заполнение поля «CVC/CVV» значением из 4 цифр:
     @Test
+    @DisplayName ("Should display an error if CVC/CVV is four digit")
     public void shouldCVCCVVOnFourDigit() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -357,6 +390,7 @@ public class PurchaseTestPayment {
 
     // Заполнение поля «CVC/CVV»  нечисловым значением:
     @Test
+    @DisplayName ("Should display an error if CVC/CVV non numeric value")
     public void shouldCVCCVVNonNumericValue() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
@@ -367,6 +401,7 @@ public class PurchaseTestPayment {
 
     // Не заполнение формы «Оплата по карте»:
     @Test
+    @DisplayName ("Should declined payment if form is empty")
     void shouldFormIfEmpty() {
         var purchasepage = new PurchasePage();
         var form = purchasepage.buyByCard();
