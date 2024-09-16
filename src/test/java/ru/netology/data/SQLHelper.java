@@ -44,9 +44,7 @@ public class SQLHelper {
         sleep(500);
         var statusSQL = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
         return getStatus(statusSQL);
-
-        //var statusSQL = "SELECT status FROM payment_entity LIMIT 1";
-        //return getStatus(statusSQL);
+        
     }
 
     @SneakyThrows
